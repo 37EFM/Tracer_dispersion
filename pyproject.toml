@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "efmtracer"
+version = "0.1.0"
+description = "Eulerian and Lagrangian advection-diffusion of a tracer in a sheared channel flow, for the course 37EFM at TU/e"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Matias Duran Matute"}]
+dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab"]
+test = ["pytest"]
+gotm = ["xarray", "netCDF4"]
+
+[tool.setuptools]
+packages = ["efmtracer"]

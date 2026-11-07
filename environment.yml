@@ -1,0 +1,15 @@
+# conda env create -f environment.yml
+# conda activate efmtracer
+name: efmtracer
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyterlab
+  - pytest
+  - pip
+  - pip:
+      - -e .
