@@ -38,7 +38,7 @@ def uniformity_time(H, D, tolerance=0.01):
 
 
 def taylor_K(z, u, D):
-    """Taylor's effective longitudinal diffusivity, equation (7.x) of the notes,
+    """Taylor's effective longitudinal diffusivity, equation (7.3) of the notes,
 
         K = -(1/H) int u'(z) [ int_{-H}^{z} (1/D(z')) int_{-H}^{z'} u'(z'') dz'' dz' ] dz,
 
@@ -63,5 +63,5 @@ def taylor_K_linear(delta_u, H, D):
 
 
 def shear_dispersion_scaling(delta_u, H, D):
-    """Order-of-magnitude estimate K ~ (delta u)^2 H^2 / D, equation (7.x)."""
+    """Order-of-magnitude estimate K ~ (delta u)^2 H^2 / D, equation (7.1) of the notes."""
     return delta_u ** 2 * H ** 2 / D
