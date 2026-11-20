@@ -75,7 +75,7 @@ any other GOTM run.
 wall-bounded cosine series, the transverse diffusion time $H^2/D$,
 Taylor's effective diffusivity for arbitrary $u(z)$ and $D(z)$,
 
-$$K = -\frac{1}{H}\int_{-H}^{0} u'(z)\left[\int_{-H}^{z}\frac{1}{D(z')}\int_{-H}^{z'}u'(z'')\,dz''\,dz'\right]dz,$$
+$$E = -\frac{1}{H}\int_{-H}^{0} u'(z)\left[\int_{-H}^{z}\frac{1}{D(z')}\int_{-H}^{z'}u'(z'')\,dz''\,dz'\right]dz,$$
 
 its closed form $(\Delta u)^2 H^2/(120 D)$ for a linear profile, and the
 scaling $(\Delta u)^2 H^2 / D$.
@@ -83,9 +83,9 @@ scaling $(\Delta u)^2 H^2 / D$.
 ## Results to expect
 
 For the Couette profiles ($H = 10$ m, $\Delta u = 0.86$ m/s,
-$\bar D = 0.031$ m$^2$/s): $K = 3.6$ m$^2$/s, about 115 times $\bar D$,
+$\bar D = 0.031$ m$^2$/s): $E = 3.6$ m$^2$/s, about 115 times $\bar D$,
 and a transverse diffusion time of 0.9 h. The variance of the patch
-grows as $t^2$ for the first minutes, then bends over to $2Kt$ after
+grows as $t^2$ for the first minutes, then bends over to $2Et$ after
 about one transverse diffusion time. Particles and field agree to a few
 per cent at a 2 s particle step. The tests in `tests/` check all of
 this on synthetic cases; run them with `pytest`.

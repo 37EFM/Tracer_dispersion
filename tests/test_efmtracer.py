@@ -28,23 +28,23 @@ def test_eulerian_varying_D_conserves_mass_and_reaches_uniform():
     assert abs(hist["var_z"][-1] - H ** 2 / 12) < 0.05                   # vertically uniform
 
 
-def test_taylor_K_linear_profile():
+def test_taylor_E_linear_profile():
     z = np.linspace(-H, 0, 2001)
-    K = theory.taylor_K(z, 0.5 * (z + H) / H, 0.01)
-    assert abs(K - theory.taylor_K_linear(0.5, H, 0.01)) < 1e-3
+    E = theory.taylor_E(z, 0.5 * (z + H) / H, 0.01)
+    assert abs(E - theory.taylor_E_linear(0.5, H, 0.01)) < 1e-3
 
 
 def test_shear_dispersion_matches_taylor():
     prof = profiles.linear_shear(H, 0.0, 0.5, 0.02)
     z = np.linspace(-H, 0, 2001)
-    K = theory.taylor_K(z, prof.u(z), prof.D(z))
+    E = theory.taylor_E(z, prof.u(z), prof.D(z))
     grid = eulerian.Grid(L=8000, nx=800, H=H, nz=50)        # wide enough: sigma_x reaches ~700 m
     c0 = eulerian.gaussian_blob(grid, 4000, -H / 2, 5.0, 0.5)
     T = theory.mixing_time(H, 0.02)
     _, _, hist = eulerian.Solver(grid, prof.u, prof.D).run(c0, dt=10.0, t_end=6 * T, save_every=1e9)
     late = hist["t"] > 3 * T
-    K_fit = np.polyfit(hist["t"][late], hist["var_x"][late], 1)[0] / 2
-    assert abs(K_fit / K - 1) < 0.05
+    E_fit = np.polyfit(hist["t"][late], hist["var_x"][late], 1)[0] / 2
+    assert abs(E_fit / E - 1) < 0.05
 
 
 def test_lagrangian_constant_D_variance():

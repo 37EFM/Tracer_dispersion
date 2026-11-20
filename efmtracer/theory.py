@@ -37,10 +37,10 @@ def uniformity_time(H, D, tolerance=0.01):
     return H ** 2 / (np.pi ** 2 * D) * np.log(2 / tolerance)
 
 
-def taylor_K(z, u, D):
+def taylor_E(z, u, D):
     """Taylor's effective longitudinal diffusivity, equation (7.3) of the notes,
 
-        K = -(1/H) int u'(z) [ int_{-H}^{z} (1/D(z')) int_{-H}^{z'} u'(z'') dz'' dz' ] dz,
+        E = -(1/H) int u'(z) [ int_{-H}^{z} (1/D(z')) int_{-H}^{z'} u'(z'') dz'' dz' ] dz,
 
     for tabulated u(z) and D(z) on the same z (from -H to 0).  D may vary with z.
     """
@@ -57,11 +57,11 @@ def taylor_K(z, u, D):
     return -trapezoid(up * middle, z) / H
 
 
-def taylor_K_linear(delta_u, H, D):
-    """Closed form of taylor_K for a linear profile with velocity difference delta_u (Exercise 7.1)."""
+def taylor_E_linear(delta_u, H, D):
+    """Closed form of taylor_E for a linear profile with velocity difference delta_u (Exercise 7.1)."""
     return delta_u ** 2 * H ** 2 / (120 * D)
 
 
 def shear_dispersion_scaling(delta_u, H, D):
-    """Order-of-magnitude estimate K ~ (delta u)^2 H^2 / D, equation (7.1) of the notes."""
+    """Order-of-magnitude estimate E ~ (delta u)^2 H^2 / D, equation (7.1) of the notes."""
     return delta_u ** 2 * H ** 2 / D
