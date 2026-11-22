@@ -1,4 +1,4 @@
-"""Analytical results from Chapters 6 (Diffusion) and 7 (Mixing and dispersion)."""
+"""Analytical results from Chapters 5 (Diffusion) and 7 (Mixing and dispersion)."""
 from __future__ import annotations
 
 import numpy as np
@@ -30,11 +30,6 @@ def wall_bounded_profile(z, t, z0, D, H, n_modes=200, sigma0=0.0):
 def mixing_time(H, D):
     """Transverse diffusion time H^2 / D (Chapter 7)."""
     return H ** 2 / D
-
-
-def uniformity_time(H, D, tolerance=0.01):
-    """Time after which the slowest mode of wall-bounded diffusion is below ``tolerance``."""
-    return H ** 2 / (np.pi ** 2 * D) * np.log(2 / tolerance)
 
 
 def taylor_E(z, u, D):

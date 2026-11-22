@@ -10,7 +10,7 @@ come from the turbulent Couette simulation of the
 
 | Notebook | What it does |
 |---|---|
-| `notebooks/01_constant_diffusion.ipynb` | A blob between two walls with constant $D$ and uniform flow: how long until it is spread over the depth, for molecular and for turbulent diffusivities. Checks against the Gaussian and the wall-bounded series solutions of Chapter 6. |
+| `notebooks/01_constant_diffusion.ipynb` | A blob between two walls with constant $D$ and uniform flow: how long until it is spread over the depth, for molecular and for turbulent diffusivities. Checks against the Gaussian and the wall-bounded series solutions of Chapter 5, and the time to uniformity measured for a release at mid-depth and one near the bed. |
 | `notebooks/02_couette_dispersion.ipynb` | The same blob in the turbulent Couette flow, with $u(z)$ and $D(z)$ from GOTM: shear dispersion, Taylor's effective diffusivity of Chapter 7, and the three regimes of the variance. |
 | `notebooks/03_lagrangian_particles.ipynb` | Particles with a second-order stochastic time step: the well-mixed test, and a side-by-side comparison with the Eulerian solution. |
 
